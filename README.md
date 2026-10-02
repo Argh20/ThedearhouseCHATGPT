@@ -1,17 +1,28 @@
-# THE DEAR HOUSE
+# Luma Goods
 
-Premium React + TypeScript ecommerce foundation, designed for Vercel and independent of Shopify.
+Premium digital-products commerce storefront built with React, TypeScript and Vite.
+
+## Included
+- Premium dark liquid-glass inspired visual system
+- Responsive homepage and product catalogue
+- Search and category filtering
+- Product detail pages
+- Wishlist and cart drawer
+- Checkout UI prepared for Razorpay
+- Digital-delivery architecture boundaries
+- Accessible, reusable React components
+- Vite production build setup
 
 ## Run locally
+```bash
+npm install
+npm run dev
+```
 
-`npm install` then `npm run dev`.
+## Production integrations
+Payment verification, authenticated downloads, customer accounts, admin authorization, email delivery, analytics and persistent product/order data should be connected through server-side services before accepting real payments.
 
-## Configure before production
+Never expose payment secrets, service-role keys or private download storage credentials in frontend code.
 
-Copy `.env.example` to `.env.local`. Add only the public Supabase URL/anon key and Razorpay key ID to Vite variables. Keep `RAZORPAY_KEY_SECRET` and `SUPABASE_SERVICE_ROLE_KEY` on serverless/edge functions only.
-
-Apply `supabase/migrations/001_initial.sql` in Supabase SQL Editor, then set appropriate user roles for admins. Build `/api/create-order` and `/api/verify-payment` using the supplied `api/razorpay-contract.ts` contract. The frontend intentionally does not simulate successful payment.
-
-## Current working scope
-
-Home, catalogue/filtering, responsive product pages and variants, cart persistence, cart drawer, checkout validation UI, route shells, and responsive navigation are implemented. Product imagery is editorial placeholder content from Unsplash—replace with licensed brand photography before launch. Authentication, admin authorisation, newsletter/contact persistence, live inventory, Razorpay server endpoints, transactional emails, analytics and Qikink require configuration/credentials and are deliberately represented as integration boundaries rather than fake integrations.
+## Deployment
+The project is Vercel-ready as a Vite application.
